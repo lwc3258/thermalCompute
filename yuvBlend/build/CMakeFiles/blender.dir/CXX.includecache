@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/blender_input.hpp
+string
+-
+opencv2/opencv.hpp
+-
+
+../include/edge_image_scale_blender.h
+string
+-
+
+../include/yuneec_cv_utilities.hpp
+opencv2/opencv.hpp
+-
+string
+-
+
+/home/lee/share/cali_opencv3.0/yuvBlend/src/main.cpp
+opencv2/opencv.hpp
+-
+blender_input.hpp
+/home/lee/share/cali_opencv3.0/yuvBlend/src/blender_input.hpp
+edge_image_scale_blender.h
+/home/lee/share/cali_opencv3.0/yuvBlend/src/edge_image_scale_blender.h
+yuneec_cv_utilities.hpp
+/home/lee/share/cali_opencv3.0/yuvBlend/src/yuneec_cv_utilities.hpp
+chrono
+-
+

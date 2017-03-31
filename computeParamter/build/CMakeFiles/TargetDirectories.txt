@@ -1,0 +1,2 @@
+/home/lee/share/cali_opencv3.0/computeParamter/build/CMakeFiles/computeScale.dir
+/home/lee/share/cali_opencv3.0/computeParamter/build/CMakeFiles/computeShift.dir
