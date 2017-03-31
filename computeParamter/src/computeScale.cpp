@@ -110,8 +110,8 @@ void loadImagePoints() {
 
     bool found1 = false, found2 = false;
 
-    found1 = findCirclesGrid( img1, boardSize, corners1, CALIB_CB_ASYMMETRIC_GRID );
-    found2 = findCirclesGrid( img2, boardSize, corners2, CALIB_CB_ASYMMETRIC_GRID );
+    found1 = findCirclesGrid( gray1, boardSize, corners1, CALIB_CB_ASYMMETRIC_GRID );
+    found2 = findCirclesGrid( gray2, boardSize, corners2, CALIB_CB_ASYMMETRIC_GRID );
 
     std::cout << "Find corner1's size:" << corners1.size() << std::endl;
     std::cout << "Find corner2's size:" << corners2.size() << std::endl;
@@ -250,6 +250,23 @@ Mat imageConvert(FILE* fileIn,const float width,const float height)
     fclose(fileIn);
     //destroyWindow("yuv");
     return rgbImg;
+}
+
+void runComputeShift(cv::Mat thermal,cv::Mat visible)
+{
+    cv::Mat gray;
+    cv::Mat testImage = cv::imread("./testImage",-1);
+    cvtColor(testImage, gray, CV_RGB2GRAY);
+
+    bool found;
+    std::vector< cv::Point2f > corners;
+    found = findChessboardCorners( gray, boardSize, corners,
+        CV_CALIB_CB_ADAPTIVE_THRESH | CV_CALIB_CB_FAST_CHECK | CV_CALIB_CB_NORMALIZE_IMAGE);
+
+    if(found)
+    {
+        std::cout << "found chessboard corners" << std::endl;
+    }
 }
 
 int main(int argc, char** argv)

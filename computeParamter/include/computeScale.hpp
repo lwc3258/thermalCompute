@@ -39,6 +39,8 @@ double computeReprojectErrors(const vector<vector<Point3f> >& objectPoints,
 //TODO,need to figure out the parameters.
 void saveCameraParams();
 
+void runComputeShift(cv::Mat thermal,cv::Mat visible);
+
 Mat imageConvert(FILE* fileIn,const float width,const float height);
 
 std::vector< std::vector< cv::Point2f > > imagePoints1, imagePoints2;

@@ -73,7 +73,11 @@ src/computeScale.cpp)
 target_link_libraries(computeScale
 ${OpenCV_LIBS}
 )
-
+add_executable(houghcircles
+src/houghcircles.cpp)
+target_link_libraries(houghcircles
+${OpenCV_LIBS}
+)
 #add_executable(matchmethod_orb_akaze_brisk
 #src/matchmethod_orb_akaze_brisk.cpp)
 ##target_link_libraries(matchmethod_orb_akaze_brisk
